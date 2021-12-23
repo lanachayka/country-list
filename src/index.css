@@ -1,5 +1,46 @@
-body {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap');
+
+/*COLORS*/
+:root {
+  --main-background: #E5E5E5;
+  --details-background: #F1F1F1;
+  --header-background: rgba(214, 194, 141, 0.5);
+  --cards-background: linear-gradient(180deg, rgba(255, 228, 133, 0.5) 21.88%, rgba(186, 123, 0, 0.5) 100%);
+  --balls-color-1: #FBCAB3;
+  --balls-color-2: #D7E2C2;
+  --codes-color: #A6E6FD;
+  --time-zone-color: #B9EAC3;
+  --languages-color: #FBD3C0;
+  --currencies-color: #FFE4A4;
+  --text-color: #313131;
 }
+
+/*RESET STYLES*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/*MAIN STYLES*/
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--main-background);
+}
+
 
 
