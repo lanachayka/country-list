@@ -3,7 +3,10 @@ import st from './CountryItem.module.css'
 export default function CountryItem({flag, country, capital, region}){
     return (<div className={st.wrapper}>
                 <div>
-                    <img className={st.image} src={flag} alt={`Flag of ${country}`}/>
+                    <img className={st.flag}
+                         src={`https://flagcdn.com/${flag.toLowerCase()}.svg`}
+                         alt={`Flag of ${country}`}
+                    />
                 </div>
                 <div className={st.description}>
                     <p className={st.title}>Country</p>

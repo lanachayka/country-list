@@ -1,21 +1,24 @@
 import st from './CountryList.module.css'
 import CountryItem from "../CounrtyItem/CountryItem";
+import {COUNTRIES} from "./queries";
+import {useQuery} from "@apollo/client";
 
 export default function CountryList() {
-    const countries = [
-        {id:'1', name:'Japan', capital: 'Tokyo', region: 'Asia', url: 'https://flagcdn.com/w2560/jp.png'},
-        {id:'2', name:'Germany', capital: 'Berlin', region: 'Europe', url:'https://flagcdn.com/w2560/de.png'},
-        {id:'3', name:'Ukraine', capital: 'Kiev', region: 'Europe', url:'https://flagcdn.com/w2560/ua.png'},
-    ]
+
+    const { loading, error, data } = useQuery(COUNTRIES);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+
     return (
         <ul className={st.wrapper}>
-            {countries.map(country=>(
+            {data.countries.map(country=>(
                 <CountryItem
-                    key={country.id}
-                    flag={country.url}
+                    key={country.code}
+                    flag={country.code}
                     country={country.name}
                     capital={country.capital}
-                    region={country.region}
+                    region={country.continent.name}
                 />
             ))}
         </ul>
