@@ -10,19 +10,18 @@ function App() {
   const [isCardChosen, setIsCardChosen] = useState(false);
   const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
 
+  const showCountryList = () => {
+    if(!isBigScreen && isCardChosen) {
+      return (<></>)
+    } else return <CountryList setIsCardChosen={setIsCardChosen}/>
+  }
+
   return (
     <div className="App">
         <Header isCardChosen={isCardChosen} setIsCardChosen={setIsCardChosen}/>
-        {isBigScreen && isCardChosen
-        ? (<><ChooseCard isCardChosen={isCardChosen}/>
-            <CountryList setIsCardChosen={setIsCardChosen}/>
-            <CountryDetails/></>)
-        : !isBigScreen && isCardChosen
-        ? (<><ChooseCard isCardChosen={isCardChosen}/>
-            <CountryDetails/></>)
-        : (<><ChooseCard isCardChosen={isCardChosen}/>
-            <CountryList setIsCardChosen={setIsCardChosen}/>
-            </>)}
+        <ChooseCard isCardChosen={isCardChosen}/>
+        {showCountryList()}
+        {isCardChosen && <CountryDetails/>}
     </div>
   );
 }
