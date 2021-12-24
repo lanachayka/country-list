@@ -4,7 +4,7 @@ export default function CountryItem({flag, country, capital, region}){
     return (<div className={st.wrapper}>
                 <div>
                     <img className={st.flag}
-                         src={`https://flagcdn.com/${flag.toLowerCase()}.svg`}
+                         src={`https://flagcdn.com/h240/${flag.toLowerCase()}.png`}
                          alt={`Flag of ${country}`}
                     />
                 </div>
