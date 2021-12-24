@@ -3,6 +3,21 @@
     width: 100%;
     height: 58px;
     grid-area: header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    font-size: 30px;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .title{
@@ -11,6 +26,4 @@
     font-size: 32px;
     line-height: 37px;
     text-align: center;
-    padding-top: 12px;
-    padding-bottom: 8px;
 }
