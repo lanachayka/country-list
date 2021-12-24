@@ -3,7 +3,7 @@ import CountryItem from "../CounrtyItem/CountryItem";
 import {COUNTRIES} from "./queries";
 import {useQuery} from "@apollo/client";
 
-export default function CountryList() {
+export default function CountryList({setIsCardChosen}) {
 
     const { loading, error, data } = useQuery(COUNTRIES);
 
@@ -19,6 +19,7 @@ export default function CountryList() {
                     country={country.name}
                     capital={country.capital}
                     region={country.continent.name}
+                    setIsCardChosen={setIsCardChosen}
                 />
             ))}
         </ul>
