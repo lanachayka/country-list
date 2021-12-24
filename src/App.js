@@ -5,7 +5,7 @@ import CountryList from "./components/CountryList/CountryList";
 
 function App() {
   return (
-    <div>
+    <div className="App">
         <Header />
         <ChooseCard />
         <CountryList />
