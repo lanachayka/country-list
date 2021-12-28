@@ -1,7 +1,6 @@
 import st from './CountryDetails.module.css';
 import {COUNTRY} from "./queries";
 import {useQuery} from "@apollo/client";
-import vector from '../../images/vector.png'
 import CountryDetailsItem from "../CountryDetailsItem/CountryDetailsItem";
 
 export default function CountryDetails({selectedCard}) {
