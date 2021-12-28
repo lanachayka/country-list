@@ -27,3 +27,35 @@
 .vector {
     margin-bottom: -7px;
 }
+
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#currency {
+    background-color: var(--currencies-color);
+    text-align: center;
+    padding-block: 2px;
+    border-radius: 15px;
+    padding-inline: 10px;
+}
+
+#languages {
+    background-color: var(--languages-color);
+    text-align: center;
+    padding-block: 2px;
+    border-radius: 15px;
+    padding-inline: 10px;
+}
+
+#phone {
+    background-color: var(--phone-color);
+    text-align: center;
+    padding: 2px;
+    border-radius: 15px;
+    padding-inline: 10px;
+}
+

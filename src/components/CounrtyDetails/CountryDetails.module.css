@@ -7,8 +7,8 @@
 }
 
 .flag {
-    width: 127px;
-    height: 75px;
+    max-width: 127px;
+    min-height: 75px;
     border-radius: 5px;
 }
 
