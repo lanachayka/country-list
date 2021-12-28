@@ -2,6 +2,7 @@ import st from './CountryDetails.module.css';
 import {COUNTRY} from "./queries";
 import {useQuery} from "@apollo/client";
 import vector from '../../images/vector.png'
+import CountryDetailsItem from "../CountryDetailsItem/CountryDetailsItem";
 
 export default function CountryDetails({selectedCard}) {
     const { loading, error, data } = useQuery(COUNTRY, {
@@ -15,36 +16,13 @@ export default function CountryDetails({selectedCard}) {
              src={`https://flagcdn.com/h240/${data.country.code.toLowerCase()}.png`}
              alt={`Flag of ${data.country.name}`}
         />
-        <ul>
-            <li>
-                <p className={st.title}>Country</p>
-                <p className={st.text}>{data.country.name}</p>
-            </li>
-            <img src={vector} alt="vector"/>
-            <li>
-                <p className={st.title}>Capital</p>
-                <p className={st.text}>{data.country.capital}</p>
-            </li>
-            <img src={vector} alt="vector"/>
-            <li>
-                <p className={st.title}>Region</p>
-                <p className={st.text}>{data.country.continent.name}</p>
-            </li>
-            <img src={vector} alt="vector"/>
-            <li>
-                <p className={st.title}>Region</p>
-                <p className={st.text}>{data.country.currency}</p>
-            </li>
-            <img src={vector} alt="vector"/>
-            <li>
-                <p className={st.title}>Official Languages</p>
-                <p className={st.text}>{data.country.languages.map(language => `${language.name} `)}</p>
-            </li>
-            <img src={vector} alt="vector"/>
-            <li>
-                <p className={st.title}>Calling Code</p>
-                <p className={st.text}>{data.country.phone}</p>
-            </li>
+        <ul className={st.info}>
+            <CountryDetailsItem color="pink" title="Country" text={data.country.name} last={false}/>
+            <CountryDetailsItem color="green" title="Capital" text={data.country.capital} last={false}/>
+            <CountryDetailsItem color="pink" title="Region" text={data.country.continent.name} last={false}/>
+            <CountryDetailsItem color="green" title="Currencies" text={data.country.currency} last={false}/>
+            <CountryDetailsItem color="pink" title="Official Languages" text={data.country.languages.map(language => `${language.name} `)} last={false}/>
+            <CountryDetailsItem color="green" title="Calling Code" text={data.country.phone} last={true}/>
         </ul>
     </div>)
 }

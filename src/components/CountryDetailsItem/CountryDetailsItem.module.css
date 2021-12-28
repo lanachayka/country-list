@@ -1,0 +1,29 @@
+.title {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--title-color);
+}
+
+.text {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+
+.vector {
+    margin-bottom: -7px;
+}
