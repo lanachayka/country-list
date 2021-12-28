@@ -14,7 +14,10 @@ function App() {
   const showCountryList = () => {
     if(!isBigScreen && isCardChosen) {
       return (<></>)
-    } else return <CountryList setIsCardChosen={setIsCardChosen} setSelectedCard={setSelectedCard}/>
+    } else return <CountryList setIsCardChosen={setIsCardChosen}
+                               setSelectedCard={setSelectedCard}
+                               selectedCard={selectedCard}
+    />
   }
 
   return (

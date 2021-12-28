@@ -43,6 +43,10 @@
     line-height: 20px;
 }
 
+#selected{
+    border: 2px solid var(--selected-color);
+}
+
 @media (min-width: 780px) {
     .wrapper{
         width: 412px;
@@ -56,4 +60,5 @@
         font-size: 18px;
         line-height: 22px;
     }
+
 }

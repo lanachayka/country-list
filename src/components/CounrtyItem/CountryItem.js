@@ -1,11 +1,11 @@
 import st from './CountryItem.module.css'
 
-export default function CountryItem({flag, country, capital, region, setIsCardChosen, setSelectedCard}){
+export default function CountryItem({flag, country, capital, region, setIsCardChosen, setSelectedCard, selectedCard}){
     const selectCard = () => {
         setIsCardChosen(true);
         setSelectedCard(flag);
     }
-    return (<div className={st.wrapper} onClick={selectCard}>
+    return (<div id={selectedCard===flag ? st.selected : st.none} className={st.wrapper} onClick={selectCard}>
                 <div>
                     <img className={st.flag}
                          src={`https://flagcdn.com/h240/${flag.toLowerCase()}.png`}
