@@ -16,3 +16,12 @@
     margin-block: 30px;
     list-style-type: none;
 }
+
+@media (min-width: 780px) {
+    .flag {
+        position: absolute;
+        top: 115px;
+        align-self: center;
+        margin-inline: 0;
+    }
+}
