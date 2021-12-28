@@ -15,8 +15,10 @@ export default function CountryItem({flag, country, capital, region, setIsCardCh
                 <div className={st.description}>
                     <p className={st.title}>Country</p>
                     <p className={st.textName}>{country}</p>
-                    <p className={st.title}>Capital</p>
-                    <p className={st.text}>{capital}</p>
+                    {capital && <>
+                        <p className={st.title}>Capital</p>
+                        <p className={st.text}>{capital}</p>
+                    </>}
                     <p className={st.title}>Region</p>
                     <p className={st.text}>{region}</p>
                 </div>
