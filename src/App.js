@@ -20,9 +20,9 @@ function App() {
   return (
     <div className="App">
         <Header isCardChosen={isCardChosen} setIsCardChosen={setIsCardChosen}/>
-        <ChooseCard isCardChosen={isCardChosen}/>
+        <ChooseCard isCardChosen={isCardChosen} selectedCard={selectedCard}/>
         {showCountryList()}
-        {isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
+        {!isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
     </div>
   );
 }

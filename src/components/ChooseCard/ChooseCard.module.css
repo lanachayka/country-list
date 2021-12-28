@@ -29,8 +29,7 @@
     .planet {
         width: 226px;
         height: 226px;
-        margin-top: 150px;
-        position: fixed;
+        margin-top: 100px;
     }
     #planetCenter {
         margin-top: 350px;
@@ -38,8 +37,6 @@
     .title {
         font-size: 84px;
         line-height: 98px;
-        position: fixed;
-        margin-top: 350px;
         padding-inline: 10px;
     }
     .wrapper {
@@ -52,6 +49,6 @@
     }
     .flags {
        width: 100%;
-        margin-top: 5px;
+        margin-top: -570px;
     }
 }
