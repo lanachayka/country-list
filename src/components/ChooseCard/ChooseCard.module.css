@@ -32,7 +32,8 @@
         margin-top: 100px;
     }
     #planetCenter {
-        margin-top: 390px;
+        position: relative;
+        top: 350px;
     }
     .title {
         font-size: 84px;
@@ -48,6 +49,6 @@
     }
     .flags {
        width: 100%;
-       margin-top: -615px;
+       margin-top: -300px;
     }
 }

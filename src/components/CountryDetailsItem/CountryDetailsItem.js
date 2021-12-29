@@ -1,5 +1,4 @@
 import vector from '../../images/vector.png';
-import vectorBig from '../../images/vectorBig.png'
 import greenBall from '../../images/ellipseGreen.png';
 import greenBallBig from '../../images/ellipseGreenBig.png';
 import pinkBall from '../../images/ellipsePink.png';
@@ -27,6 +26,6 @@ export default function CountryDetailsItem ({ id, color, title, text, last}){
                         }
                     </div>
                 </div>
-                    {!last && <img src={isBigScreen ? vectorBig : vector} alt="vector" className={st.vector}/>}
+                    {!last && !isBigScreen && <img src={vector} alt="vector" className={st.vector}/>}
               </li>)
 }

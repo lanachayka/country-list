@@ -28,12 +28,15 @@
         margin: 0;
     }
     .info {
-        padding-top: 20px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-row-gap: 50px;
+        grid-row-gap: 100px;
         width: 100%;
         min-height: 550px;
+        background-image: url("../../images/Vector.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 65%;
     }
 }
