@@ -37,22 +37,17 @@
 
 #currency {
     background-color: var(--currencies-color);
-    text-align: center;
-    padding-block: 2px;
-    border-radius: 15px;
-    padding-inline: 10px;
 }
 
 #languages {
     background-color: var(--languages-color);
-    text-align: center;
-    padding-block: 2px;
-    border-radius: 15px;
-    padding-inline: 10px;
 }
 
 #phone {
     background-color: var(--phone-color);
+}
+
+#currency, #languages, #phone {
     text-align: center;
     padding: 2px;
     border-radius: 15px;
@@ -60,14 +55,9 @@
 }
 
 @media (min-width: 780px) {
-    #phone {
+    #phone,#languages, #currency  {
         background: none;
-    }
-    #languages {
-        background: none;
-    }
-    #currency {
-        background: none;
+        text-align: center;
     }
     .info{
         align-items: center;
@@ -82,7 +72,25 @@
         font-size: 35px;
         line-height: 45px;
         text-align: center;
-        white-space: nowrap;
+    }
+    .country, .languages, .region {
+        align-self: end;
+    }
+    .capital, .currency, .phone {
+        align-self: start;
+    }
+    .country > .wrapper,
+    .capital > .wrapper,
+    .region > .wrapper{
+        flex-direction: column-reverse;
+    }
+    .currency > .wrapper,
+    .languages > .wrapper,
+    .phone > .wrapper{
+        flex-direction: column;
+    }
+    .vector {
+        margin-bottom: 0;
     }
 }
 

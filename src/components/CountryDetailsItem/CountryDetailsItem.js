@@ -7,45 +7,26 @@ import pinkBallBig from '../../images/ellipsePinkBig.png';
 import st from './CountryDetailsItem.module.css'
 import {useMediaQuery} from "react-responsive";
 
-export default function CountryDetailsItem ({ direction, top, left, color, title, text, last}){
-    let styledText = st.none;
-    switch (title) {
-        case "Currencies": styledText = st.currency;
-        break;
-        case "Official Languages": styledText = st.languages;
-        break;
-        case "Calling Code": styledText = st.phone;
-    }
+export default function CountryDetailsItem ({ id, color, title, text, last}){
 
     const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
-    let stylePosition = {position: "flex"};
-    let styleDirection = {flexDirection:"row"}
-    if(isBigScreen) {
-        stylePosition={position: "absolute", top: top+"px", left: left+"px"}
-        styleDirection={flexDirection:direction}
-    }
 
-    if(text !== null && text.length > 0) {
-        return (<li style={stylePosition}>
-                <div className={st.wrapper} style={styleDirection}>
+    return (<li className={st[id]}>
+                <div className={st.wrapper}>
                     <img src={color==="green" ? isBigScreen ? greenBallBig :greenBall : isBigScreen? pinkBallBig: pinkBall} alt="list items"/>
                     <div className={st.info}>
                         <p className={st.title}>{title}</p>
-                        {!Array.isArray(text)
-                            ? <div id={styledText} className={st.text}>
+                        {(!Array.isArray(text))
+                            ? <div id={st[id]} className={st.text}>
                                 <p>{text}</p>
-                            </div>
+                              </div>
                             : <div className={st.list}>{text.map(item=>(
-                                <div key={item} id={styledText} className={st.text}>
+                                <div key={item} id={st[id]} className={st.text}>
                                     <p>{item}</p>
                                 </div>))}</div>
                         }
                     </div>
                 </div>
-                {!last && <img src={isBigScreen ? vectorBig : vector} alt="vector" className={st.vector}/>}
-            </li>
-        )
-
-    }
-    return <></>
+                    {!last && <img src={isBigScreen ? vectorBig : vector} alt="vector" className={st.vector}/>}
+              </li>)
 }
