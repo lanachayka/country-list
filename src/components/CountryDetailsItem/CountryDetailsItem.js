@@ -1,9 +1,13 @@
 import vector from '../../images/vector.png';
+import vectorBig from '../../images/vectorBig.png'
 import greenBall from '../../images/ellipseGreen.png';
+import greenBallBig from '../../images/ellipseGreenBig.png';
 import pinkBall from '../../images/ellipsePink.png';
+import pinkBallBig from '../../images/ellipsePinkBig.png';
 import st from './CountryDetailsItem.module.css'
+import {useMediaQuery} from "react-responsive";
 
-export default function CountryDetailsItem ({color, title, text, last}){
+export default function CountryDetailsItem ({ direction, top, left, color, title, text, last}){
     let styledText = st.none;
     switch (title) {
         case "Currencies": styledText = st.currency;
@@ -12,10 +16,19 @@ export default function CountryDetailsItem ({color, title, text, last}){
         break;
         case "Calling Code": styledText = st.phone;
     }
+
+    const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
+    let stylePosition = {position: "flex"};
+    let styleDirection = {flexDirection:"row"}
+    if(isBigScreen) {
+        stylePosition={position: "absolute", top: top+"px", left: left+"px"}
+        styleDirection={flexDirection:direction}
+    }
+
     if(text !== null && text.length > 0) {
-        return (<li>
-                <div className={st.wrapper}>
-                    <img src={color==="green" ? greenBall : pinkBall} alt="list items"/>
+        return (<li style={stylePosition}>
+                <div className={st.wrapper} style={styleDirection}>
+                    <img src={color==="green" ? isBigScreen ? greenBallBig :greenBall : isBigScreen? pinkBallBig: pinkBall} alt="list items"/>
                     <div className={st.info}>
                         <p className={st.title}>{title}</p>
                         {!Array.isArray(text)
@@ -29,7 +42,7 @@ export default function CountryDetailsItem ({color, title, text, last}){
                         }
                     </div>
                 </div>
-                {!last && <img src={vector} alt="vector" className={st.vector}/>}
+                {!last && <img src={isBigScreen ? vectorBig : vector} alt="vector" className={st.vector}/>}
             </li>
         )
 

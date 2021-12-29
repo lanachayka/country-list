@@ -24,4 +24,12 @@
         align-self: center;
         margin-inline: 0;
     }
+    .info {
+        position: relative;
+        top: 200px;
+        right: 65px;
+    }
+    .wrapper{
+        margin: 0;
+    }
 }

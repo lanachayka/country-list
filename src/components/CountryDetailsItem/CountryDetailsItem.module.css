@@ -72,6 +72,18 @@
     .info{
         align-items: center;
     }
+    .title{
+        text-align: center;
+    }
+    .wrapper{
+        gap: 5px;
+    }
+    .text{
+        font-size: 35px;
+        line-height: 45px;
+        text-align: center;
+        white-space: nowrap;
+    }
 }
 
 
