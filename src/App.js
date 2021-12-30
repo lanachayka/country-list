@@ -5,6 +5,7 @@ import CountryList from "./components/CountryList/CountryList";
 import {useState} from "react";
 import {useMediaQuery} from "react-responsive";
 import CountryDetails from "./components/CounrtyDetails/CountryDetails";
+import Container from "./components/Container/Container";
 
 function App() {
   const [isCardChosen, setIsCardChosen] = useState(false);
@@ -20,12 +21,19 @@ function App() {
     />
   }
 
+  const showChooseCard = () => {
+    if(isBigScreen && isCardChosen) {
+      return (<></>)
+    } else return <ChooseCard isCardChosen={isCardChosen} selectedCard={selectedCard}/>
+  }
+
   return (
     <div className="App">
         <Header isCardChosen={isCardChosen} setIsCardChosen={setIsCardChosen}/>
-        <ChooseCard isCardChosen={isCardChosen} selectedCard={selectedCard}/>
+        {showChooseCard()}
         {showCountryList()}
         {!isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
+        {isBigScreen && isCardChosen && <Container />}
     </div>
   );
 }
