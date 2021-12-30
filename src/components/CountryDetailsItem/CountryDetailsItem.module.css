@@ -59,6 +59,10 @@
         background: none;
         text-align: center;
     }
+    .list{
+        justify-content: center;
+        gap: 0;
+    }
     .info{
         align-items: center;
     }
