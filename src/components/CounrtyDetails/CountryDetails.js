@@ -23,10 +23,10 @@ export default function CountryDetails({selectedCard}) {
     }
 
     return (<div className={st.wrapper}>
-        <img className={st.flag}
+        { !isBigScreen && <img className={st.flag}
              src={`https://flagcdn.com/h240/${data.country.code.toLowerCase()}.png`}
              alt={`Flag of ${data.country.name}`}
-        />
+        />}
         <ul className={st.info}>
             <CountryDetailsItem id="country" color="pink" title="Country"
                                 text={data.country.name ? data.country.name : "N/A"} last={false}/>

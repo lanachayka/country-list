@@ -24,7 +24,7 @@ function App() {
   const showChooseCard = () => {
     if(isBigScreen && isCardChosen) {
       return (<></>)
-    } else return <ChooseCard isCardChosen={isCardChosen} selectedCard={selectedCard}/>
+    } else return <ChooseCard isCardChosen={isCardChosen} />
   }
 
   return (
@@ -33,7 +33,7 @@ function App() {
         {showChooseCard()}
         {showCountryList()}
         {!isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
-        {isBigScreen && isCardChosen && <Container />}
+        {isBigScreen && isCardChosen && <Container selectedCard={selectedCard}/>}
     </div>
   );
 }

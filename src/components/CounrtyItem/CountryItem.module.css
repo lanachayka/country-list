@@ -47,10 +47,30 @@
     border: 2px solid var(--selected-color);
 }
 
+@media (min-width:550px) and (max-width: 779px) {
+    .wrapper{
+        width: 320px;
+        height: 140px;
+    }
+    .flag {
+        max-width: 150px;
+        max-height: 80px;
+    }
+    .textName{
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .text{
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+}
+
 @media (min-width: 780px) {
     .wrapper{
-        width: 412px;
-        height: 199px;
+        min-width: 412px;
+        min-height: 199px;
     }
     .textName{
         font-size: 20px;

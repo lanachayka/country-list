@@ -6,8 +6,18 @@
     margin-block: 20px;
 }
 
+@media (min-width:550px) and (max-width: 779px) {
+    .wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+}
+
 @media (min-width: 780px) {
-    .wrapper {
-       margin-top: 4px;
+    .wrapper{
+        max-height: 85vh;
+        overflow: scroll;
     }
 }
