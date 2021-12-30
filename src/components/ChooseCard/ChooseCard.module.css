@@ -32,8 +32,11 @@
         margin-top: 100px;
     }
     #planetCenter {
-        position: relative;
-        top: 350px;
+        margin-top:370px;
+
+    }
+    #flagsCenter {
+        margin-top: -595px;
     }
     .title {
         font-size: 84px;

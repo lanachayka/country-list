@@ -12,7 +12,7 @@ export default function ChooseCard({isCardChosen, selectedCard}) {
                      src={planet} alt="Planet emoji"
                 />
                 {isCardChosen
-                    ? <img className={st.flags} src={flags} alt="Flags"/>
+                    ? <img id={isCardChosen ? st.flagsCenter : st.none} className={st.flags} src={flags} alt="Flags"/>
                     : <p className={st.title}>Choose a card :)</p>
                 }
                 {isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
