@@ -7,7 +7,7 @@
     align-items: center;
     justify-items: center;
     width: 388px;
-    height: 174px;
+    min-height: 174px;
     margin-top: 26px;
     direction:ltr;
 }
@@ -65,7 +65,6 @@
         font-size: 12px;
         line-height: 15px;
     }
-
 }
 
 @media (min-width: 780px) {
@@ -81,5 +80,4 @@
         font-size: 18px;
         line-height: 22px;
     }
-
 }
