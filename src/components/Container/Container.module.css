@@ -21,6 +21,7 @@
 
 .flags {
     width: 60%;
+    margin-bottom: 10px;
 }
 
 .details {
@@ -33,5 +34,17 @@
         max-width: 100px;
         max-height: 55px;
         margin-bottom: -50px;
+    }
+}
+
+@media (min-width: 781px) and (max-width: 1024px){
+    .flags {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px){
+    .flags {
+        width: 90%;
     }
 }

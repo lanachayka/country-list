@@ -7,3 +7,9 @@
             "list card card card";
     }
 }
+
+@media (min-width: 781px) and (max-width: 1024px){
+    .Main {
+        margin-right: 20px;
+    }
+}

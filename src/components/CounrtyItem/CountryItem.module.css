@@ -67,7 +67,7 @@
     }
 }
 
-@media (min-width: 780px) {
+@media (min-width: 1025px) {
     .wrapper{
         min-width: 400px;
         min-height: 187px;
@@ -79,5 +79,17 @@
     .text{
         font-size: 18px;
         line-height: 22px;
+    }
+}
+
+@media (min-width: 781px) and (max-width: 1024px){
+    .flag {
+        max-width: 150px;
+        max-height: 80px;
+    }
+    .wrapper{
+        width: 300px;
+        height: 140px;
+        margin-right: 20px;
     }
 }
