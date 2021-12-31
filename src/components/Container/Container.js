@@ -9,7 +9,9 @@ export default function Container({selectedCard}){
                  alt={`Flag of ${selectedCard}`}
             />
             <img className={st.flags} src={flags} alt="Flags"/>
-            <CountryDetails selectedCard={selectedCard} />
+            <div className={st.details}>
+                <CountryDetails selectedCard={selectedCard} />
+            </div>
     </div>
     )
 }

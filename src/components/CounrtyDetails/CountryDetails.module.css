@@ -25,12 +25,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-row-gap: 120px;
-        width: 100%;
-        min-height: 400px;
+        grid-row-gap: 100px;
+        min-height: 450px;
+        width: 650px;
         margin: 0;
-        align-self: center;
-        justify-self: center;
     }
 }
 
@@ -40,9 +38,6 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-row-gap: 100px;
-        width: 100%;
         margin-block: 20px;
-        align-self: center;
-        justify-self: center;
     }
 }

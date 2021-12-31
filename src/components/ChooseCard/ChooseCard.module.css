@@ -6,6 +6,7 @@
     align-items: center;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     grid-area: card;
+    margin-bottom: 25px;
 }
 
 .planet {
@@ -26,8 +27,8 @@
 
 @media (min-width: 780px) {
     .planet {
-        width: 226px;
-        height: 226px;
+        width: 266px;
+        height: 266px;
     }
     .title {
         font-size: 84px;
@@ -37,13 +38,7 @@
     .wrapper {
         border-radius: 15px;
         box-shadow: none;
-        margin-block: 25px;
-        max-height: 85vh;
-        margin-inline: 50px;
         justify-content: center;
-    }
-    .flags {
-       width: 100%;
-       margin-top: -300px;
+        margin-bottom: 0;
     }
 }

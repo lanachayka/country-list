@@ -1,10 +1,9 @@
 @media (min-width: 780px) {
-    .App {
+    .Main {
+        margin-block: 35px;
+        margin-right: 112px;
         display: grid;
-        grid-template-columns: 1.5fr 2fr;
-        justify-content: center;
         grid-template-areas:
-            "header header"
-            "list card";
+            "list card card card";
     }
 }

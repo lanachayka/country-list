@@ -28,12 +28,14 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div>
         <Header isCardChosen={isCardChosen} setIsCardChosen={setIsCardChosen}/>
-        {showChooseCard()}
-        {showCountryList()}
-        {!isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
-        {isBigScreen && isCardChosen && <Container selectedCard={selectedCard}/>}
+        <div className="Main">
+          {showChooseCard()}
+          {showCountryList()}
+          {!isBigScreen && isCardChosen && <CountryDetails selectedCard={selectedCard}/>}
+          {isBigScreen && isCardChosen && <Container selectedCard={selectedCard}/>}
+        </div>
     </div>
   );
 }
