@@ -37,14 +37,17 @@
 
 #currency {
     background-color: var(--currencies-color);
+    margin-top: 5px;
 }
 
 #languages {
     background-color: var(--languages-color);
+    margin-top: 5px;
 }
 
 #phone {
     background-color: var(--phone-color);
+    margin-top: 5px;
 }
 
 #currency, #languages, #phone {

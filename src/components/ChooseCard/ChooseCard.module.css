@@ -25,6 +25,13 @@
     text-align: center;
 }
 
+@media (min-width:550px) and (max-width: 779px) {
+    .flags {
+        width: 60%;
+        margin-top: -60px;
+    }
+}
+
 @media (min-width: 780px) {
     .planet {
         width: 266px;
