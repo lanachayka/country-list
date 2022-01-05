@@ -29,17 +29,17 @@ export default function CountryDetails({selectedCard}) {
         />}
         <ul className={st.info}>
             <CountryDetailsItem id="country" color="pink" title="Country"
-                                text={data.country.name ? data.country.name : "N/A"} last={false}/>
+                                text={data.country.name ? data.country.name : "N/A"} />
             <CountryDetailsItem id="capital" color="green" title="Capital"
-                                text={data.country.capital ? data.country.capital : "N/A"} last={false}/>
+                                text={data.country.capital ? data.country.capital : "N/A"} />
             <CountryDetailsItem id="region" color="pink" title="Region"
-                                text={data.country.continent.name ? data.country.continent.name : "N/A"} last={false}/>
+                                text={data.country.continent.name ? data.country.continent.name : "N/A"} />
             <CountryDetailsItem id="currency" color="green" title="Currencies"
-                                text={currency.length > 0 ? currency : "N/A"} last={false}/>
+                                text={currency.length > 0 ? currency : "N/A"} />
             <CountryDetailsItem id="languages" color="pink" title="Official Languages"
-                                text={languages.length > 0 ? languages : "N/A"} last={false}/>
+                                text={languages.length > 0 ? languages : "N/A"} />
             <CountryDetailsItem id="phone" color="green" title="Calling Code"
-                                text={`+${data.country.phone}`} last={!isBigScreen }/>
+                                text={`+${data.country.phone}`}/>
         </ul>
     </div>)
 }

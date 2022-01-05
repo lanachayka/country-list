@@ -1,10 +1,9 @@
-import vector from '../../images/vector.png';
 import greenBall from '../../images/ellipseGreen.png';
 import pinkBall from '../../images/ellipsePink.png';
 import st from './CountryDetailsItem.module.css'
 import {useMediaQuery} from "react-responsive";
 
-export default function CountryDetailsItem ({ id, color, title, text, last}){
+export default function CountryDetailsItem ({ id, color, title, text}){
 
     const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
 
@@ -17,13 +16,16 @@ export default function CountryDetailsItem ({ id, color, title, text, last}){
                             ? <div id={st[id]} className={st.text}>
                                 <p>{text}</p>
                               </div>
-                            : <div className={st.list}>{text.map(item=>(
+                            : !isBigScreen
+                                ? <div className={st.list}>{text.map(item=>(
                                 <div key={item} id={st[id]} className={st.text}>
                                     <p>{item}</p>
                                 </div>))}</div>
+                                : <div id={st[id]} className={st.text}>
+                                    <p>{text[0]}</p>
+                                </div>
                         }
                     </div>
                 </div>
-                    {!last && !isBigScreen && <img src={vector} alt="vector" className={st.vector}/>}
               </li>)
 }

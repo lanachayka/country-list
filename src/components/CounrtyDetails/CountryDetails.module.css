@@ -15,6 +15,9 @@
 .info {
     margin-block: 30px;
     list-style-type: none;
+    background-image: url('../../images/vector.png');
+    background-position: left;
+    background-repeat: repeat-y;
 }
 
 @media (min-width: 780px) {
@@ -29,6 +32,7 @@
         min-height: 450px;
         width: 650px;
         margin: 0;
+        background: none;
     }
 }
 
