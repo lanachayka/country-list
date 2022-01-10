@@ -14,7 +14,7 @@ function App() {
 
   const showCountryList = () => {
     if(!isBigScreen && isCardChosen) {
-      return (<></>)
+      return (<div className="Main"/>)
     } else return <CountryList setIsCardChosen={setIsCardChosen}
                                setSelectedCard={setSelectedCard}
                                selectedCard={selectedCard}
@@ -23,12 +23,12 @@ function App() {
 
   const showChooseCard = () => {
     if(isBigScreen && isCardChosen) {
-      return (<></>)
+      return (<div className="Main"/>)
     } else return <ChooseCard isCardChosen={isCardChosen} />
   }
 
   return (
-    <div>
+    <div data-testid="app-component">
         <Header isCardChosen={isCardChosen} setIsCardChosen={setIsCardChosen}/>
         <div className="Main">
           {showChooseCard()}

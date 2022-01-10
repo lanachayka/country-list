@@ -3,6 +3,7 @@ import {COUNTRY} from "./queries";
 import {useQuery} from "@apollo/client";
 import CountryDetailsItem from "../CountryDetailsItem/CountryDetailsItem";
 import {useMediaQuery} from "react-responsive";
+import {checkData} from "./helper";
 
 export default function CountryDetails({selectedCard}) {
 
@@ -11,35 +12,28 @@ export default function CountryDetails({selectedCard}) {
     const { loading, error, data } = useQuery(COUNTRY, {
         variables: {code: selectedCard},
     });
-    if (loading) return null;
-    if (error) return `Error! ${error}`;
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
 
-    const languages = [];
-    data.country.languages.map(item=>languages.push(item.name));
-
-    let currency = '';
-    if(data.country.currency) {
-        currency = data.country.currency.split(",");
-    }
-
-    return (<div className={st.wrapper}>
+    return (<div className={st.wrapper} data-testid="country-details-component">
         { !isBigScreen && <img className={st.flag}
              src={`https://flagcdn.com/h240/${data.country.code.toLowerCase()}.png`}
              alt={`Flag of ${data.country.name}`}
         />}
         <ul className={st.info}>
             <CountryDetailsItem id="country" color="pink" title="Country"
-                                text={data.country.name ? data.country.name : "N/A"} />
+                                text={checkData(data.country.name)} />
             <CountryDetailsItem id="capital" color="green" title="Capital"
-                                text={data.country.capital ? data.country.capital : "N/A"} />
+                                text={checkData(data.country.capital)} />
             <CountryDetailsItem id="region" color="pink" title="Region"
-                                text={data.country.continent.name ? data.country.continent.name : "N/A"} />
+                                text={checkData(data.country.continent.name)} />
             <CountryDetailsItem id="currency" color="green" title="Currencies"
-                                text={currency.length > 0 ? currency : "N/A"} />
+                                text={checkData(data.country.currency, "currency")}
+            />
             <CountryDetailsItem id="languages" color="pink" title="Official Languages"
-                                text={languages.length > 0 ? languages : "N/A"} />
+                                text={checkData(data.country.languages, "languages")} />
             <CountryDetailsItem id="phone" color="green" title="Calling Code"
-                                text={`+${data.country.phone}`}/>
+                                text={checkData(data.country.phone, "phone")}/>
         </ul>
     </div>)
 }

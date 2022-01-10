@@ -3,7 +3,7 @@ import planet from '../../images/planet.png'
 import flags from '../../images/flags.png'
 
 export default function ChooseCard({isCardChosen}) {
-    return (<div className={st.wrapper}>
+    return (<div data-testid="choose-card-component" className={st.wrapper}>
                 <img className={st.planet}
                      src={planet} alt="Planet emoji"
                 />

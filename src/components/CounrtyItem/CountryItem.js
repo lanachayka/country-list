@@ -5,7 +5,7 @@ export default function CountryItem({flag, country, capital, region, setIsCardCh
         setIsCardChosen(true);
         setSelectedCard(flag);
     }
-    return (<div id={selectedCard===flag ? st.selected : st.none} className={st.wrapper} onClick={selectCard}>
+    return (<div data-test-id="item-component" id={selectedCard===flag ? st.selected : st.none} className={st.wrapper} onClick={selectCard}>
                 <div>
                     <img className={st.flag}
                          src={`https://flagcdn.com/h240/${flag.toLowerCase()}.png`}

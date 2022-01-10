@@ -3,9 +3,10 @@ import {useMediaQuery} from "react-responsive";
 
 export default function Header({isCardChosen, setIsCardChosen}) {
     const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
-    return (<div className={st.wrapper}>
+    return (<div data-testid="header" className={st.wrapper}>
                 {!isBigScreen &&
-                    <p  onClick={()=>setIsCardChosen(false)}
+                    <p  data-testid="arrow"
+                        onClick={()=>setIsCardChosen(false)}
                         className={isCardChosen ? st.arrow : st.hidden}
                     >&#8592;</p>
                 }

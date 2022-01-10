@@ -2,6 +2,11 @@ import '@testing-library/jest-dom';
 import {render, screen} from "@testing-library/react";
 import ChooseCard from "./ChooseCard";
 
+test('renders without errors', () => {
+    render(<ChooseCard isCardChosen={false} />);
+    expect(screen.getByTestId('choose-card-component')).toBeInTheDocument();
+});
+
 describe('card does not chosen', () => {
     beforeEach(() => {
         render(<ChooseCard isCardChosen={false} />);

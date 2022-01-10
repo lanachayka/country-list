@@ -14,6 +14,7 @@ export default function CountryList({setIsCardChosen, setSelectedCard, selectedC
         <ul className={st.wrapper}>
             {data.countries.map(country=>(
                 <CountryItem
+                    data-testid="country-item"
                     key={country.code}
                     flag={country.code}
                     country={country.name}
