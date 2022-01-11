@@ -13,21 +13,32 @@ test('renders without errors with arrays', () => {
     expect(screen.getByTestId('details-item-component')).toBeInTheDocument();
 });
 
-describe('tests with different display width', () => {
-    test('width more than 780px', () => {
+describe('screen width more than 780px', () => {
+    beforeEach(() => {
         render(
             <ResponsiveContext.Provider value={{ width: 785 }}>
                 <CountryDetailsItem id={"currencies"} text={["EUR"]} color={"pink"} title={"Currencies"}/>
             </ResponsiveContext.Provider>
         );
+    });
+    test('details-item-big-screen should be displayed', () => {
         expect(screen.getByTestId('details-item-big-screen')).toBeInTheDocument();
     });
-    test('width less than 780px', () => {
+});
+
+describe('screen width less than 780px', () => {
+    beforeEach(() => {
         render(
             <ResponsiveContext.Provider value={{ width: 500 }}>
                 <CountryDetailsItem id={"currencies"} text={["EUR"]} color={"pink"} title={"Currencies"}/>
             </ResponsiveContext.Provider>
         );
+    });
+    test('details-item-small-screen should be displayed', () => {
         expect(screen.getByTestId('details-item-small-screen')).toBeInTheDocument();
     });
+    test('details-balls should be displayed', () => {
+        expect(screen.getByTestId('details-balls')).toBeInTheDocument();
+    });
 });
+

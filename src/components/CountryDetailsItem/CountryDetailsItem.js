@@ -9,7 +9,7 @@ export default function CountryDetailsItem ({ id, color, title, text}){
 
     return (<li data-testid="details-item-component" className={st[id]}>
                 <div className={st.wrapper}>
-                    {!isBigScreen && <img src={color==="green" ? greenBall : pinkBall} alt="list items"/>}
+                    {!isBigScreen && <img data-testid="details-balls" src={color==="green" ? greenBall : pinkBall} alt="list items"/>}
                     <div className={st.info}>
                         <p className={st.title}>{title}</p>
                         {(!Array.isArray(text))
