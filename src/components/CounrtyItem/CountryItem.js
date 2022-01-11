@@ -14,13 +14,13 @@ export default function CountryItem({flag, country, capital, region, setIsCardCh
                 </div>
                 <div className={st.description}>
                     <p className={st.title}>Country</p>
-                    <p className={st.textName}>{country}</p>
+                    <p data-testid="country" className={st.textName}>{country}</p>
                     {capital && <>
                         <p className={st.title}>Capital</p>
-                        <p className={st.text}>{capital}</p>
+                        <p data-testid="capital" className={st.text}>{capital}</p>
                     </>}
                     <p className={st.title}>Region</p>
-                    <p className={st.text}>{region}</p>
+                    <p data-testid="region" className={st.text}>{region}</p>
                 </div>
             </div>)
 }

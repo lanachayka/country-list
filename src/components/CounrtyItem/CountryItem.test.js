@@ -20,6 +20,22 @@ describe('render', () => {
     test('if selectedCard equal flag main wrapper should have id selected', () => {
         expect(wrapper.find('#selected').length).toBe(1);
     });
+    test('should render correct country name', () => {
+        expect(wrapper.find('[data-testid="country"]').text()).toBe('Andorra');
+    });
+    test('should render correct capital', () => {
+        expect(wrapper.find('[data-testid="capital"]').text()).toBe('Andorra la Vella');
+    });
+    test('should render correct region', () => {
+        expect(wrapper.find('[data-testid="region"]').text()).toBe('Europe');
+    });
+});
+
+test('should not render capital with empty string', () => {
+    const wrapper = shallow(<CountryItem setSelectedCard={()=>{}} selectedCard={"AD"}
+                                   setIsCardChosen={() => {}} flag={"AD"}
+                                   country={"Andorra"} region={"Europe"} capital={""}/> );
+    expect(wrapper.find('[data-testid="capital"]')).not.toHaveLength(1);
 });
 
 describe('functions should be called when clicked on wrapper', () => {
