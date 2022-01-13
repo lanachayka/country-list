@@ -61,7 +61,7 @@ describe('screen width less than 780px', () => {
         expect(screen.getByTestId('details-item-small-screen')).toBeInTheDocument();
     });
     test('details-balls should be displayed', () => {
-        expect(screen.getByTestId('details-balls')).toBeInTheDocument();
+        expect(screen.getByAltText('pink list items')).toBeInTheDocument();
     });
 });
 

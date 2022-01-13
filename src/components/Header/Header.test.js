@@ -5,7 +5,7 @@ import { Context as ResponsiveContext } from 'react-responsive';
 
 test('renders without errors', () => {
     render(<Header isCardChosen={false} setIsCardChosen={() => {}}/>);
-    expect(screen.getAllByTestId('header').length).toBeGreaterThan(0);
+    expect(screen.getByRole('banner')).toBeInTheDocument();
 });
 
 test('function called when arrow clicked', () => {

@@ -8,7 +8,7 @@ export default function ChooseCard({isCardChosen}) {
                      src={planet} alt="Planet emoji"
                 />
                 {isCardChosen
-                    ? <img data-testid="flags" className={st.flags} src={flags} alt="Flags"/>
+                    ? <img className={st.flags} src={flags} alt="Flags"/>
                     : <p data-testid="choose-text" className={st.title}>Choose a card :)</p>
                 }
             </div>)

@@ -21,6 +21,6 @@ describe('card does chosen', () => {
         render(<ChooseCard isCardChosen={true} />);
     });
     test('flags should be displayed', () => {
-        expect(screen.getByTestId('flags')).toBeInTheDocument();
+        expect(screen.getByAltText('Flags')).toBeInTheDocument();
     });
 });
