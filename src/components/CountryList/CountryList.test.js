@@ -6,12 +6,20 @@ import TestRenderer from 'react-test-renderer';
 import {wait} from "@testing-library/user-event/dist/utils";
 const {act} = TestRenderer;
 
+window.scrollTo = jest.fn();
+afterEach(() => {
+    jest.resetAllMocks();
+});
+afterAll(() => {
+    jest.clearAllMocks();
+});
+
 test('testing the loading state', async () => {
     let component;
     await act(async () => {
         component = TestRenderer.create(
             <MockedProvider mocks={[]} addTypename={false}>
-                <CountryList setIsCardChosen={() => {}} selectedCard={""} setSelectedCard={() => {}}/>
+                <CountryList setIsCardChosen={() => {}} selectedCard={""} setSelectedCard={() => {}} scrollPosition={0} setScrollPosition={() => {}}/>
             </MockedProvider>
         );
     })
@@ -41,7 +49,7 @@ test('should render a list of countries', async () => {
     await act(async () => {
         component = TestRenderer.create(
             <MockedProvider mocks={[mockCountries]} addTypename={false}>
-                <CountryList setIsCardChosen={() => {}} selectedCard={"AD"} setSelectedCard={() => {}}/>
+                <CountryList setIsCardChosen={() => {}} selectedCard={"AD"} setSelectedCard={() => {}} scrollPosition={0} setScrollPosition={() => {}}/>
             </MockedProvider>
         );
         await wait(1000);
@@ -61,7 +69,7 @@ test('should show error UI', async () => {
    await act(async() => {
        component = TestRenderer.create(
            <MockedProvider mocks={[mockWithError]} addTypename={false}>
-               <CountryList setIsCardChosen={() => {}} selectedCard={"AD"} setSelectedCard={() => {}}/>
+               <CountryList setIsCardChosen={() => {}} selectedCard={"AD"} setSelectedCard={() => {}} scrollPosition={0} setScrollPosition={() => {}}/>
            </MockedProvider>
        );
        await wait(1000);

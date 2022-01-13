@@ -2,7 +2,7 @@ import './App.css';
 import Header from "../Header/Header";
 import ChooseCard from "../ChooseCard/ChooseCard";
 import CountryList from "../CountryList/CountryList";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useMediaQuery} from "react-responsive";
 import CountryDetails from "../CounrtyDetails/CountryDetails";
 import Container from "../Container/Container";

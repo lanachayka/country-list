@@ -8,7 +8,7 @@ describe('render', () => {
     let wrapper;
     beforeEach(() => {
         wrapper = shallow(<CountryItem setSelectedCard={()=>{}} selectedCard={"AD"}
-                                       setIsCardChosen={() => {}} flag={"AD"}
+                                       setIsCardChosen={() => {}} setScrollPosition={() => {}} flag={"AD"}
                                        country={"Andorra"} region={"Europe"} capital={"Andorra la Vella"}/> );
     });
     test('renders without errors', () => {
@@ -33,7 +33,7 @@ describe('render', () => {
 
 test('should not render capital with empty string', () => {
     const wrapper = shallow(<CountryItem setSelectedCard={()=>{}} selectedCard={"AD"}
-                                   setIsCardChosen={() => {}} flag={"AD"}
+                                   setIsCardChosen={() => {}} setScrollPosition={()=>{}} flag={"AD"}
                                    country={"Andorra"} region={"Europe"} capital={""}/> );
     expect(wrapper.find('[data-testid="capital"]')).not.toHaveLength(1);
 });
@@ -41,19 +41,24 @@ test('should not render capital with empty string', () => {
 describe('functions should be called when clicked on wrapper', () => {
     let mockSetSelectedCard;
     let mockSetIsCardChosen;
+    let mockSetScrollPosition;
     let wrapper;
     beforeEach(() => {
         mockSetSelectedCard = jest.fn();
         mockSetIsCardChosen = jest.fn();
+        mockSetScrollPosition = jest.fn();
         wrapper = shallow(<CountryItem setSelectedCard={mockSetSelectedCard} selectedCard={"AN"}
-                                             setIsCardChosen={mockSetIsCardChosen} flag={"AD"}
+                                             setIsCardChosen={mockSetIsCardChosen} setScrollPosition={mockSetScrollPosition} flag={"AD"}
                                              country={"Andorra"} region={"Europe"} capital={"Andorra la Vella"}/> );
         wrapper.simulate('click');
     });
     test('setSelectedCard should be called', () => {
         expect(mockSetSelectedCard).toBeCalledTimes(1);
     });
-    test('mockSetIsCardChosen should be called', () => {
+    test('setIsCardChosen should be called', () => {
         expect(mockSetSelectedCard).toBeCalledTimes(1);
+    });
+    test('setScrollPosition should be called', () => {
+        expect(mockSetScrollPosition).toBeCalledTimes(1);
     });
 });
