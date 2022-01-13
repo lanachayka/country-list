@@ -1,9 +1,10 @@
 import st from './CountryItem.module.css'
 
-export default function CountryItem({flag, country, capital, region, setIsCardChosen, setSelectedCard, selectedCard}){
+export default function CountryItem({flag, country, capital, region, setIsCardChosen, setSelectedCard, selectedCard, setScrollPosition}){
     const selectCard = () => {
         setIsCardChosen(true);
         setSelectedCard(flag);
+        setScrollPosition(window.scrollY);
     }
     return (<div data-test-id="item-component" id={selectedCard===flag ? st.selected : st.none} className={st.wrapper} onClick={selectCard}>
                 <div>

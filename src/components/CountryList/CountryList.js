@@ -2,8 +2,13 @@ import st from './CountryList.module.css'
 import CountryItem from "../CounrtyItem/CountryItem";
 import {COUNTRIES} from "./queries";
 import {useQuery} from "@apollo/client";
+import {useEffect} from "react";
 
-export default function CountryList({setIsCardChosen, setSelectedCard, selectedCard}) {
+export default function CountryList({setIsCardChosen, setSelectedCard, selectedCard, scrollPosition, setScrollPosition}) {
+
+    useEffect(() => {
+        window.scrollTo(0, scrollPosition);
+    }, []);
 
     const { loading, error, data } = useQuery(COUNTRIES);
 
@@ -23,6 +28,7 @@ export default function CountryList({setIsCardChosen, setSelectedCard, selectedC
                     setIsCardChosen={setIsCardChosen}
                     setSelectedCard={setSelectedCard}
                     selectedCard={selectedCard}
+                    setScrollPosition={setScrollPosition}
                 />
             ))}
         </ul>
