@@ -41,11 +41,8 @@ describe('screen width more than 780px', () => {
             </ResponsiveContext.Provider>
         );
     });
-    test('details-item-big-screen should be displayed', () => {
-        expect(screen.getByTestId('details-item-big-screen')).toBeInTheDocument();
-    });
     test('only first item from array should be displayed', () => {
-        expect(screen.getByTestId('details-item-big-screen')).toHaveTextContent("EUR");
+        expect(screen.getByText('EUR')).toBeInTheDocument();
     });
 });
 

@@ -22,7 +22,7 @@ export default function CountryDetailsItem ({ id, color, title, text}){
                                     <p data-testid="text-array">{item}</p>
                                 </div>))}</div>
                                 : <div id={st[id]} className={st.text}>
-                                    <p data-testid="details-item-big-screen">{text[0]}</p>
+                                    <p>{text[0]}</p>
                                 </div>
                         }
                     </div>
