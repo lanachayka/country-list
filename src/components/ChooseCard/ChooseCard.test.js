@@ -12,7 +12,7 @@ describe('card does not chosen', () => {
         render(<ChooseCard isCardChosen={false} />);
     });
     test('choose card text should be displayed', () => {
-        expect(screen.getByTestId('choose-text')).toHaveTextContent('Choose a card :)');
+        expect(screen.getByText('Choose a card :)')).toBeInTheDocument();
     });
 });
 

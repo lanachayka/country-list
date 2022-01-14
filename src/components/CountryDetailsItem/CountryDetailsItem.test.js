@@ -11,10 +11,10 @@ describe('renders without errors with strings', () => {
         expect(screen.getByTestId('details-item-component')).toBeInTheDocument();
     });
     test('should render component with correct title', () => {
-        expect(screen.getByTestId('title')).toHaveTextContent('Country');
+        expect(screen.getByText('Country')).toBeInTheDocument();
     });
     test('should render component with correct text', () => {
-        expect(screen.getByTestId('text-string')).toHaveTextContent('Andorra');
+        expect(screen.getByText('Andorra')).toBeInTheDocument();
     });
     test('should render component with correct color ball', () => {
         expect(screen.getByAltText('green list items')).toBeInTheDocument();

@@ -9,7 +9,7 @@ export default function ChooseCard({isCardChosen}) {
                 />
                 {isCardChosen
                     ? <img className={st.flags} src={flags} alt="Flags"/>
-                    : <p data-testid="choose-text" className={st.title}>Choose a card :)</p>
+                    : <p className={st.title}>Choose a card :)</p>
                 }
             </div>)
 }

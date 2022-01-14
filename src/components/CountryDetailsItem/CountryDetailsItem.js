@@ -11,10 +11,10 @@ export default function CountryDetailsItem ({ id, color, title, text}){
                 <div className={st.wrapper}>
                     {!isBigScreen && <img src={color==="green" ? greenBall : pinkBall} alt={`${color} list items`}/>}
                     <div className={st.info}>
-                        <p data-testid="title" className={st.title}>{title}</p>
+                        <p className={st.title}>{title}</p>
                         {(!Array.isArray(text))
                             ? <div id={st[id]} className={st.text}>
-                                <p data-testid="text-string">{text}</p>
+                                <p>{text}</p>
                               </div>
                             : !isBigScreen
                                 ? <div className={st.list}>{text.map(item=>(
