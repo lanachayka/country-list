@@ -1,19 +1,19 @@
 import st from './CountryList.module.css'
 import CountryItem from "../CounrtyItem/CountryItem";
 import {COUNTRIES} from "./queries";
-import {useQuery} from "@apollo/client";
-import {useEffect} from "react";
+import {useLazyQuery} from "@apollo/client";
 
 export default function CountryList({setIsCardChosen, setSelectedCard, selectedCard, scrollPosition, setScrollPosition}) {
 
-    useEffect(() => {
-        window.scrollTo(0, scrollPosition);
-    }, []);
+    const [loadCountries, { called, error, loading, data }] = useLazyQuery(COUNTRIES);
 
-    const { loading, error, data } = useQuery(COUNTRIES);
+    if (called && loading) return <p>Loading...</p>;
+    if(error) return <p>Error :(</p>
+    if (!called) {
+        return loadCountries();
+    }
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
+    window.scrollTo(0, scrollPosition);
 
     return (
         <ul className={st.wrapper}>
