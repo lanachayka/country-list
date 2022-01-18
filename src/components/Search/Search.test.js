@@ -7,10 +7,20 @@ test('renders without errors', () => {
   expect(screen.getByRole('textbox')).toBeInTheDocument();
 });
 
-test('function setSearchFilter should be called when input changed', () => {
-  const mockSetSearchFilter = jest.fn();
-  render(<Search setSearchFilter={mockSetSearchFilter}/>);
-  const input = screen.getByRole('textbox');
-  fireEvent.change(input, {target: {value: 'test'}});
-  expect(mockSetSearchFilter).toBeCalledWith('test');
+describe('setSearchFilter function', () => {
+  let mockSetSearchFilter;
+  let input;
+  beforeEach(() => {
+    mockSetSearchFilter = jest.fn();
+    render(<Search setSearchFilter={mockSetSearchFilter}/>);
+    input = screen.getByRole('textbox');
+  });
+  test('should be called when input changed', () => {
+    fireEvent.change(input, {target: {value: 'test'}});
+    expect(mockSetSearchFilter).toBeCalled();
+  });
+  test('should be not case sensitive', () => {
+    fireEvent.change(input, {target: {value: 'TEsT'}});
+    expect(mockSetSearchFilter).toBeCalledWith('test');
+  });
 });

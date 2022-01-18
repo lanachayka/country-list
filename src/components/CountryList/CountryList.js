@@ -33,7 +33,7 @@ export default function CountryList({setIsCardChosen, setSelectedCard, selectedC
             <Search setSearchFilter={setSearchFilter}/>
             <ul className={st.wrapper}>
                 {data.countries
-                    .filter(country=>country.name.includes(searchFilter))
+                    .filter(country=>country.name.toLowerCase().includes(searchFilter))
                     .map(country=>(
                     <CountryItem
                         key={country.code}
