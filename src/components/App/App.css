@@ -1,6 +1,6 @@
 @media (min-width: 780px) {
     .Main {
-        margin-block: 35px;
+        margin-top: 25px;
         margin-right: 112px;
         display: grid;
         grid-template-areas:
