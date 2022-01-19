@@ -8,6 +8,7 @@ import Search from "../Search/Search";
 export default function CountryList({setIsCardChosen, setSelectedCard, selectedCard, scrollPosition, setScrollPosition}) {
 
     const [searchFilter, setSearchFilter] = useState('');
+    const [searchBy, setSearchBy] = useState('name');
 
     useEffect(() => {
         window.scrollTo(0, scrollPosition);
@@ -30,10 +31,14 @@ export default function CountryList({setIsCardChosen, setSelectedCard, selectedC
     //window.scrollTo(0, scrollPosition);
 
     return (<div className={st.main}>
-            <Search setSearchFilter={setSearchFilter}/>
+            <Search setSearchFilter={setSearchFilter} setSearchBy={setSearchBy}/>
             <ul className={st.wrapper}>
                 {data.countries
-                    .filter(country=>country.name.toLowerCase().includes(searchFilter))
+                    .filter(country=>{
+                        return searchBy === 'region'
+                        ? country.continent.name && country.continent.name.toLowerCase().includes(searchFilter)
+                        : country[searchBy] && country[searchBy].toLowerCase().includes(searchFilter)
+                    })
                     .map(country=>(
                     <CountryItem
                         key={country.code}

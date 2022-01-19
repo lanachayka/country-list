@@ -1,12 +1,49 @@
 import st from './Serach.module.css';
 
-export default function Search({setSearchFilter}) {
+export default function Search({setSearchFilter, setSearchBy}) {
 
     const onSearching = (e) => {
         setSearchFilter(e.target.value.toLowerCase());
     }
 
     return (
-        <input className={st.input} type="text" onChange={onSearching}/>
+        <div className={st.wrapper} data-testid="search">
+            <div className={st.buttons}>
+                <h4>Search by:</h4>
+                <label htmlFor="country-radio" className={st.radio}>
+                    <input
+                        onChange={(e) => e.target.checked && setSearchBy("name")}
+                        type="radio" id="country-radio" name="searchBy"
+                        value="country" defaultChecked={true}
+                    />
+                    <span>Country</span>
+                </label>
+                <label htmlFor="capital-radio" className={st.radio}>
+                    <input
+                        onChange={(e) => e.target.checked && setSearchBy("capital")}
+                        type="radio" id="capital-radio"
+                        name="searchBy" value="capital"
+                    />
+                    <span>Capital</span>
+                </label>
+                <label htmlFor="region-radio" className={st.radio}>
+                    <input
+                        onChange={(e) => e.target.checked && setSearchBy("region")}
+                        type="radio" id="region-radio"
+                        name="searchBy" value="region"
+                    />
+                    <span>Region</span>
+                </label>
+                <label htmlFor="code-radio" className={st.radio}>
+                    <input
+                        onChange={(e) => e.target.checked && setSearchBy("code")}
+                        type="radio" id="code-radio"
+                        name="searchBy" value="code"
+                    />
+                    <span>Code</span>
+                </label>
+            </div>
+            <input className={st.input} type="text" onChange={onSearching}/>
+        </div>
     )
 }
