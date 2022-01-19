@@ -4,6 +4,7 @@ import {COUNTRIES} from "./queries";
 import {useQuery} from "@apollo/client";
 import {useEffect, useState} from "react";
 import Search from "../Search/Search";
+import {filterCountries} from "./helper";
 
 export default function CountryList({setIsCardChosen, setSelectedCard, selectedCard, scrollPosition, setScrollPosition}) {
 
@@ -33,12 +34,7 @@ export default function CountryList({setIsCardChosen, setSelectedCard, selectedC
     return (<div className={st.main}>
             <Search setSearchFilter={setSearchFilter} setSearchBy={setSearchBy}/>
             <ul className={st.wrapper}>
-                {data.countries
-                    .filter(country=>{
-                        return searchBy === 'region'
-                        ? country.continent.name && country.continent.name.toLowerCase().includes(searchFilter)
-                        : country[searchBy] && country[searchBy].toLowerCase().includes(searchFilter)
-                    })
+                {filterCountries(data.countries, searchBy, searchFilter)
                     .map(country=>(
                     <CountryItem
                         key={country.code}
