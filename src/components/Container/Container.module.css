@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: center;
     grid-area: card;
+    min-height: 89.5vh;
 }
 
 .flag {
