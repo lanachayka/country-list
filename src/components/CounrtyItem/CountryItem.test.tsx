@@ -1,11 +1,11 @@
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {shallow, ShallowWrapper} from 'enzyme';
 import EnzymeAdapter from "@wojtekmaj/enzyme-adapter-react-17";
 import CountryItem from "./CountryItem";
 
 Enzyme.configure({adapter: new EnzymeAdapter});
 
 describe('render', () => {
-    let wrapper;
+    let wrapper: ShallowWrapper;
     beforeEach(() => {
         wrapper = shallow(<CountryItem setSelectedCard={()=>{}} selectedCard={"AD"}
                                        setIsCardChosen={() => {}} setScrollPosition={() => {}} flag={"AD"}
@@ -39,10 +39,10 @@ test('should not render capital with empty string', () => {
 });
 
 describe('functions should be called when clicked on wrapper', () => {
-    let mockSetSelectedCard;
-    let mockSetIsCardChosen;
-    let mockSetScrollPosition;
-    let wrapper;
+    let mockSetSelectedCard: () => void;
+    let mockSetIsCardChosen: () => void;
+    let mockSetScrollPosition: () => void;
+    let wrapper: ShallowWrapper;
     beforeEach(() => {
         mockSetSelectedCard = jest.fn();
         mockSetIsCardChosen = jest.fn();

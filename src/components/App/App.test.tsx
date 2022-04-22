@@ -1,7 +1,6 @@
-import Enzyme, {shallow} from 'enzyme';
+import Enzyme, {shallow, ShallowWrapper} from 'enzyme';
 import App from "./App";
 import EnzymeAdapter from "@wojtekmaj/enzyme-adapter-react-17";
-import React from "react";
 import Header from "../Header/Header";
 import ChooseCard from "../ChooseCard/ChooseCard";
 import CountryList from "../CountryList/CountryList";
@@ -14,7 +13,7 @@ test('renders without errors', () => {
 });
 
 describe('components renders with right initial props', () => {
-   let wrapper;
+   let wrapper: ShallowWrapper;
    beforeEach(() => {
        wrapper = shallow(<App />);
    });

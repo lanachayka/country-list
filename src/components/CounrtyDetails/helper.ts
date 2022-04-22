@@ -2,7 +2,9 @@ type Languages = {
     name: string
 }
 
-export const checkData = (data: Languages[] | string, type = 'text'): string | string[] => {
+type Data = Languages[] | string | null | number
+
+export const checkData = (data: Data, type = 'text'): string | string[] => {
     switch (type) {
         case "text": {
             return data && typeof data === 'string' ? data : "N/A"

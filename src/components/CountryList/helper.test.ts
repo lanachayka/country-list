@@ -1,6 +1,7 @@
+import { Country } from './types';
 import {filterCountries} from "./helper";
 
-const countries = [
+const countries: Country[] = [
     {
         code: "AD",
         name: "Andorra",
@@ -36,5 +37,5 @@ test('filterCountries should return array with length 3', () => {
 });
 
 test('filterCountries should return array with length 0', () => {
-    expect(filterCountries(countries, 'country', 'Zero')).toHaveLength(0);
+    expect(filterCountries(countries, 'name', 'Zero')).toHaveLength(0);
 });

@@ -9,7 +9,7 @@ type Countries = {
     capital: string
 }
 
-export type SearchBy = "code" | "name" | "region" | "capital"
+export type SearchBy = "code" | "region" | "capital" | "name"
 
 export const filterCountries = (countries: Countries[], searchBy: SearchBy, searchFilter: string): Countries[] => {
     return searchBy === 'region'

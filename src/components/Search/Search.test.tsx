@@ -20,11 +20,11 @@ describe('render testing', () => {
 })
 
 describe('setSearchFilter function', () => {
-  let mockSetSearchFilter;
-  let input;
+  let mockSetSearchFilter: ()=>void;
+  let input: HTMLInputElement;
   beforeEach(() => {
     mockSetSearchFilter = jest.fn();
-    render(<Search setSearchFilter={mockSetSearchFilter}/>);
+    render(<Search setSearchBy={() => {}} setSearchFilter={mockSetSearchFilter}/>);
     input = screen.getByRole('textbox');
   });
   test('should be called when input changed', () => {
@@ -38,7 +38,7 @@ describe('setSearchFilter function', () => {
 });
 
 describe('setSearchBy function', () => {
-  let mockSetSearchBy;
+  let mockSetSearchBy: () => void;
   beforeEach(() => {
     mockSetSearchBy = jest.fn();
     render(<Search setSearchFilter={() => {}} setSearchBy={mockSetSearchBy}/>);

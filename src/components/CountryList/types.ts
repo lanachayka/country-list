@@ -2,7 +2,7 @@ type Continent = {
     name: string
 }
 
-type Country = {
+export type Country = {
     code: string,
     name: string,
     continent: Continent,
