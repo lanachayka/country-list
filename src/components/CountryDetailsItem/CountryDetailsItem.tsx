@@ -1,9 +1,16 @@
 import greenBall from '../../images/ellipseGreen.png';
 import pinkBall from '../../images/ellipsePink.png';
 import st from './CountryDetailsItem.module.css'
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
-export default function CountryDetailsItem ({ id, color, title, text}){
+type CountryDetailsItemProps = {
+    id: string,
+    color: string,
+    title: string,
+    text: string | string[]
+}
+
+const CountryDetailsItem: React.FC<CountryDetailsItemProps> = ({ id, color, title, text}) => {
 
     const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
 
@@ -29,3 +36,5 @@ export default function CountryDetailsItem ({ id, color, title, text}){
                 </div>
               </li>)
 }
+
+export default CountryDetailsItem;

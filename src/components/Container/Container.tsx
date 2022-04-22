@@ -2,7 +2,11 @@ import st from './Container.module.css';
 import flags from "../../images/flags.png";
 import CountryDetails from "../CounrtyDetails/CountryDetails";
 
-export default function Container({selectedCard}){
+type ContainerProps = {
+    selectedCard: string
+}
+
+const Container: React.FC<ContainerProps> = ({selectedCard}) => {
     return(<div data-testid="container-component" className={st.wrapper}>
             <img className={st.flag}
                  src={`https://flagcdn.com/h240/${selectedCard.toLowerCase()}.png`}
@@ -15,3 +19,5 @@ export default function Container({selectedCard}){
     </div>
     )
 }
+
+export default Container

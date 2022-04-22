@@ -2,7 +2,11 @@ import st from './ChooseCard.module.css'
 import planet from '../../images/planet.png'
 import flags from '../../images/flags.png'
 
-export default function ChooseCard({isCardChosen}) {
+type ChooseCardProps = {
+    isCardChosen: boolean
+}
+
+const ChooseCard: React.FC<ChooseCardProps>= ({isCardChosen}) => {
     return (<div data-testid="choose-card-component" className={st.wrapper}>
                 <img className={st.planet}
                      src={planet} alt="Planet emoji"
@@ -13,3 +17,5 @@ export default function ChooseCard({isCardChosen}) {
                 }
             </div>)
 }
+
+export default ChooseCard

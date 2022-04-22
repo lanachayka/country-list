@@ -1,6 +1,17 @@
 import st from './CountryItem.module.css'
 
-export default function CountryItem({flag, country, capital, region, setIsCardChosen, setSelectedCard, selectedCard, setScrollPosition}){
+type CountryItemProps = {
+    flag: string,
+    country: string,
+    capital: string,
+    region: string,
+    setIsCardChosen: (isCardChosen: boolean) => void,
+    setSelectedCard: (selectedCard: string) => void,
+    selectedCard: string,
+    setScrollPosition: (scrollPosition: number) => void,
+}
+
+const CountryItem: React.FC<CountryItemProps> = ({flag, country, capital, region, setIsCardChosen, setSelectedCard, selectedCard, setScrollPosition}) => {
     const selectCard = () => {
         setIsCardChosen(true);
         setSelectedCard(flag);
@@ -25,3 +36,5 @@ export default function CountryItem({flag, country, capital, region, setIsCardCh
                 </div>
             </div>)
 }
+
+export default CountryItem;

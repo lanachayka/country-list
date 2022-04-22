@@ -1,8 +1,14 @@
+import { SearchBy } from '../CountryList/helper';
 import st from './Serach.module.css';
 
-export default function Search({setSearchFilter, setSearchBy}) {
+type SearchProps = {
+    setSearchFilter: (filter: string) => void,
+    setSearchBy: (searchBy: SearchBy) => void
+}
 
-    const onSearching = (e) => {
+const Search: React.FC<SearchProps> = ({setSearchFilter, setSearchBy}) => {
+
+    const onSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchFilter(e.target.value.toLowerCase());
     }
 
@@ -47,3 +53,5 @@ export default function Search({setSearchFilter, setSearchBy}) {
         </div>
     )
 }
+
+export default Search

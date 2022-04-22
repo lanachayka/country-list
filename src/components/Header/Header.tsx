@@ -1,7 +1,12 @@
 import st from './Header.module.css'
-import {useMediaQuery} from "react-responsive";
+import { useMediaQuery } from "react-responsive";
 
-export default function Header({isCardChosen, setIsCardChosen}) {
+type HeaderProps = {
+    isCardChosen: boolean,
+    setIsCardChosen: (isCardChosen: boolean) => void
+}
+
+const Header: React.FC<HeaderProps> = ({isCardChosen, setIsCardChosen}) => {
     const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
     return (<header className={st.wrapper}>
                 {!isBigScreen &&
@@ -13,3 +18,5 @@ export default function Header({isCardChosen, setIsCardChosen}) {
                 <p className={st.title}>Country List</p>
             </header>)
 }
+
+export default Header

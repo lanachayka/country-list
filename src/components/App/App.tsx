@@ -10,10 +10,10 @@ import {showContainer, showCountryList} from "./helper";
 import {showChooseCard} from "./helper";
 import {showCountryDetails} from "./helper";
 
-function App() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [isCardChosen, setIsCardChosen] = React.useState(false);
-  const [selectedCard, setSelectedCard] =  React.useState('');
+const App: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [isCardChosen, setIsCardChosen] = useState<boolean>(false);
+  const [selectedCard, setSelectedCard] =  useState<string>('');
   const isBigScreen = useMediaQuery({ query: '(min-width: 780px)' });
 
   return (
